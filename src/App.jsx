@@ -9,6 +9,7 @@ import Results from "./pages/Results";
 import SplitExpense from "./pages/SplitExpense";
 import OwnerHome from "./pages/OwnerHome";
 import OwnerForm from "./pages/OwnerForm";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/owner" element={<OwnerHome />} />
         <Route path="/owner/form" element={<OwnerForm />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
