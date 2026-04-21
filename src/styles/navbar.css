@@ -1,0 +1,42 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: rgb(17, 17, 17);
+}
+
+nav h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav div {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  nav div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

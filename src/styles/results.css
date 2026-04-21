@@ -1,0 +1,104 @@
+.results-container {
+  padding: 40px;
+  background-color: #f5f9ff;
+  min-height: 100vh;
+}
+
+.results-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.section h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+  border-left: 4px solid #4facfe;
+  padding-left: 10px;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 220px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 10px;
+  font-weight: 500;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Booking */
+.booking {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.booking button {
+  margin: 10px;
+  padding: 12px 25px;
+  border: none;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.booking button:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .section {
+    width: 90%;
+  }
+
+  .card-container {
+    justify-content: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
