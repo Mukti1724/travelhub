@@ -9,32 +9,47 @@ function Signup() {
   const [confirm, setConfirm] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!name || !email || !password || !confirm) {
-      setError("All fields are required");
-      return;
-    }
+  if (!name || !email || !password || !confirm) {
+    setError("All fields are required");
+    return;
+  }
 
-    if (!email.includes("@")) {
-      setError("Enter valid email");
-      return;
-    }
+  if (!email.includes("@")) {
+    setError("Enter valid email");
+    return;
+  }
 
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters");
-      return;
-    }
+  if (password.length < 6) {
+    setError("Password must be at least 6 characters");
+    return;
+  }
 
-    if (password !== confirm) {
-      setError("Passwords do not match");
-      return;
-    }
+  if (password !== confirm) {
+    setError("Passwords do not match");
+    return;
+  }
 
-    setError("");
-    alert("Signup Successful");
-  };
+  setError("");
+
+  try {
+    const res = await fetch("http://localhost:5000/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password }),
+    });
+
+    const data = await res.json();
+
+    alert(data.message);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
   return (
     <div className="auth-container">

@@ -8,16 +8,30 @@ function OwnerForm() {
   const [contact, setContact] = useState("");
   const [msg, setMsg] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!name || !location || !price || !contact) {
-      setMsg("Please fill all fields");
-      return;
-    }
+  if (!name || !location || !price || !contact) {
+    setMsg("Please fill all fields");
+    return;
+  }
 
-    setMsg("Hotel Registered Successfully!");
-  };
+  try {
+    const res = await fetch("http://localhost:5000/hotels", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, location, price, contact }),
+    });
+
+    const data = await res.json();
+
+    setMsg(data.message);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
   return (
     <div className="owner-form">
