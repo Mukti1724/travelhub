@@ -17,10 +17,10 @@ function Home() {
 
       {/* IMAGE GALLERY */}
       <div className="gallery">
-        <img src="https://source.unsplash.com/300x200/?beach" />
-        <img src="https://source.unsplash.com/300x200/?mountains" />
-        <img src="https://source.unsplash.com/300x200/?city" />
-        <img src="https://source.unsplash.com/300x200/?travel" />
+        <img src="https://www.southernliving.com/thmb/uC9lfdB-vpeXk1XuxT12bII4EQc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1474089369-d2b0855436be4074ae986429058bf15c.jpg" />
+        <img src="https://thumbs.dreamstime.com/b/happy-travel-woman-vacation-concept-funny-traveler-enjoy-her-trip-ready-to-adventure-happy-travel-woman-vacation-concept-118679424.jpg" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRagtfHICCHhmg4xewO7PtRqpxY-GavY0egpQ&s" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb26Qyz_hObgRwlPZoj13o9HWeSE5PkFBqkw&s" />
       </div>
 
     </div>
