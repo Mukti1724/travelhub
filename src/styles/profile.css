@@ -1,0 +1,91 @@
+/* ================= PROFILE ================= */
+
+.profile-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f9ff;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 14px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.profile-card h2 {
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.profile-info p {
+  margin: 10px 0;
+}
+
+.profile-card button {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #ef4444;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.profile-card button:hover {
+  background: #dc2626;
+}
+
+/* PHOTO */
+.profile-photo {
+  margin-bottom: 20px;
+}
+
+.profile-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.placeholder {
+  width: 100px;
+  height: 100px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  margin: auto;
+}
+
+.profile-photo input {
+  margin-top: 10px;
+}
+
+/* EDIT BUTTON */
+.profile-info button {
+  margin-top: 10px;
+  padding: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+}
+
+.profile-info button:hover {
+  background: #1e40af;
+}
+
+/* LOGOUT */
+.logout-btn {
+  margin-top: 20px;
+  background: #ef4444;
+}

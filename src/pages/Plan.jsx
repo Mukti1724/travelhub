@@ -3,6 +3,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Plan() {
+  const user = localStorage.getItem("user");
+
+  if (!user) {
+    window.location.href = "/login";
+  }
+
   const [source, setSource] = useState("");
   const [destination, setDestination] = useState("");
 
@@ -16,7 +22,6 @@ function Plan() {
       return;
     }
 
-    // send data to results page
     navigate("/results", {
       state: { source, destination },
     });

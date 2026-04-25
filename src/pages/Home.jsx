@@ -1,26 +1,67 @@
 import "../styles/home.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handlePlanClick = () => {
+    const user = localStorage.getItem("user");
+    if (!user) navigate("/login");
+    else navigate("/plan");
+  };
+
   return (
     <div className="home">
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <div className="hero">
-        <h1>Explore the World with TravelHub</h1>
-        <p>Plan your trips easily and discover amazing places</p>
+        <div className="overlay">
+          <h1>Explore The World 🌍</h1>
+          <p>Your journey starts here</p>
 
-        <Link to="/plan" className="btn">
-          Plan Your Trip
-        </Link>
+          <button className="hero-btn" onClick={handlePlanClick}>
+            Let’s Travel ✈️
+          </button>
+        </div>
       </div>
 
-      {/* IMAGE GALLERY */}
-      <div className="gallery">
-        <img src="https://www.southernliving.com/thmb/uC9lfdB-vpeXk1XuxT12bII4EQc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1474089369-d2b0855436be4074ae986429058bf15c.jpg" />
-        <img src="https://thumbs.dreamstime.com/b/happy-travel-woman-vacation-concept-funny-traveler-enjoy-her-trip-ready-to-adventure-happy-travel-woman-vacation-concept-118679424.jpg" />
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRagtfHICCHhmg4xewO7PtRqpxY-GavY0egpQ&s" />
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb26Qyz_hObgRwlPZoj13o9HWeSE5PkFBqkw&s" />
+      {/* POPULAR DESTINATIONS */}
+      <div className="section">
+        <h2>Popular Destinations</h2>
+
+        <div className="cards">
+  <div className="card">
+    <img src="https://images.unsplash.com/photo-1587922546307-776227941871" />
+    <p>Goa</p>
+  </div>
+
+  <div className="card">
+    <img src="https://images.unsplash.com/photo-1580655653885-65763b2597d0" />
+    <p>Manali</p>
+  </div>
+
+  <div className="card">
+    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944" />
+    <p>Kerala</p>
+  </div>
+
+  <div className="card">
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" />
+    <p>Paris</p>
+  </div>
+</div>
+      </div>
+
+      {/* WHY US */}
+      <div className="section">
+        <h2>Why Choose Us?</h2>
+
+        <div className="features">
+          <div>💸 Smart Expense Split</div>
+          <div>🧭 Easy Trip Planning</div>
+          <div>🏨 Verified Stays</div>
+          <div>⚡ Fast & Simple</div>
+          </div>
       </div>
 
     </div>

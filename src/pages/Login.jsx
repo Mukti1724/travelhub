@@ -8,29 +8,36 @@ function Login() {
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!email || !password) {
-    setError("All fields are required");
-    return;
-  }
+    if (!email || !password) {
+      setError("All fields are required");
+      return;
+    }
 
-  try {
-    const res = await fetch("http://localhost:5000/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    try {
+      const res = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    alert(data.message);
-  } catch (err) {
-    console.log(err);
-  }
-};
+      // ✅ IMPORTANT PART (LOGIN STATE)
+      if (data.message === "Login successful") {
+        localStorage.setItem("user", email);
+        window.location.href = "/";
+      } else {
+        setError(data.message);
+      }
+
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="auth-container">

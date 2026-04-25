@@ -7,42 +7,96 @@ function Results() {
 
   // Dummy Data with Images
   const data = {
-    goa: {
-      places: [
-        { name: "Baga Beach", img: "https://source.unsplash.com/300x200/?beach" },
-        { name: "Calangute Beach", img: "https://source.unsplash.com/300x200/?sea" },
-        { name: "Fort Aguada", img: "https://source.unsplash.com/300x200/?fort" },
-      ],
-      hotels: [
-        { name: "Sea View Resort", img: "https://source.unsplash.com/300x200/?hotel" },
-        { name: "Goa Paradise", img: "https://source.unsplash.com/300x200/?resort" },
-        { name: "Beach Stay", img: "https://source.unsplash.com/300x200/?villa" },
-      ],
-      food: [
-        { name: "Fisherman Dhaba", img: "https://source.unsplash.com/300x200/?food" },
-        { name: "Spice Garden", img: "https://source.unsplash.com/300x200/?restaurant" },
-        { name: "Food Plaza", img: "https://source.unsplash.com/300x200/?dinner" },
-      ],
-    },
+  goa: {
+    places: [
+      {
+        name: "Baga Beach",
+        img: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3",
+      },
+      {
+        name: "Calangute Beach",
+        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      },
+      {
+        name: "Fort Aguada",
+        img: "https://images.unsplash.com/photo-1576485290814-1c72aa4bbb8e"
+      },
+    ],
+    hotels: [
+      {
+        name: "Sea View Resort",
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+      },
+      {
+        name: "Goa Paradise",
+        img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+      },
+      {
+        name: "Beach Stay",
+        img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+      },
+    ],
+    food: [
+      {
+        name: "Fisherman Dhaba",
+        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+      },
+      {
+        name: "Spice Garden",
+        img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5",
+      },
+      {
+        name: "Food Plaza",
+        img: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
+      },
+    ],
+  },
 
-    delhi: {
-      places: [
-        { name: "India Gate", img: "https://source.unsplash.com/300x200/?india-gate" },
-        { name: "Red Fort", img: "https://source.unsplash.com/300x200/?fort" },
-        { name: "Qutub Minar", img: "https://source.unsplash.com/300x200/?qutub-minar" },
-      ],
-      hotels: [
-        { name: "Delhi Palace", img: "https://source.unsplash.com/300x200/?hotel" },
-        { name: "Royal Stay", img: "https://source.unsplash.com/300x200/?resort" },
-        { name: "Comfort Inn", img: "https://source.unsplash.com/300x200/?room" },
-      ],
-      food: [
-        { name: "Chandni Chowk", img: "https://source.unsplash.com/300x200/?street-food" },
-        { name: "Karim's", img: "https://source.unsplash.com/300x200/?restaurant" },
-        { name: "Food Hub", img: "https://source.unsplash.com/300x200/?food" },
-      ],
-    },
-  };
+  delhi: {
+    places: [
+      {
+        name: "India Gate",
+        img: "https://images.unsplash.com/photo-1587474260584-136574528ed5",
+      },
+      {
+        name: "Red Fort",
+        img: "https://images.unsplash.com/photo-1584367369853-1ec9c6c06a44",
+      },
+      {
+        name: "Qutub Minar",
+        img: "https://images.unsplash.com/photo-1564507592333-c60657eea523",
+      },
+    ],
+    hotels: [
+      {
+        name: "Delhi Palace",
+        img: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+      },
+      {
+        name: "Royal Stay",
+        img: "https://images.unsplash.com/photo-1568495248636-6432b97bd949",
+      },
+      {
+        name: "Comfort Inn",
+        img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+      },
+    ],
+    food: [
+      {
+        name: "Chandni Chowk",
+        img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+      },
+      {
+        name: "Karim's",
+        img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+      },
+      {
+        name: "Food Hub",
+        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+      },
+    ],
+  },
+};
 
   const city = destination?.toLowerCase();
   const result = data[city];

@@ -1,52 +1,126 @@
+/* ================= HOME ================= */
 .home {
-  text-align: center;
-  padding: 40px;
-  background-color: #f5f9ff;
-  min-height: 100vh;
+  width: 100%;
 }
 
-/* HERO */
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  color: #333;
-}
- 
-.hero p {
-  font-size: 18px;
-  margin-bottom: 25px;
-  color: #666;
-}
+/* ================= HERO ================= */
+.hero {
+  height: 85vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("https://assets.insuremytrip.com/wp-content/uploads/2021/10/05112219/how_to_take_great_travel_photos.jpg") no-repeat center/cover;
 
-.btn {
-  background: linear-gradient(90deg, #4facfe, #00f2fe);
-  color: white;
-  padding: 12px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  opacity: 0.8;
-}
-
-/* GALLERY */
-.gallery {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
 }
 
-.gallery img {
-  width: 250px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
+/* ================= HERO CONTENT ================= */
+.overlay {
+  text-align: center;
+  /* color: white; */
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+}
+
+.overlay h1 {
+  font-size: 52px;
+  font-weight: 900;
+}
+
+.overlay p {
+  font-size: 23px;
+  font-weight: 700;
+  margin: 15px 0;
+  /* color: #e5e7eb; */
+}
+
+/* ================= BUTTON ================= */
+.hero-btn {
+  background: #2563eb;
+  padding: 12px 28px;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  border: none;
   transition: 0.3s;
 }
 
-.gallery img:hover {
+.hero-btn:hover {
+  background: #1e40af;
   transform: scale(1.05);
+}
+
+/* ================= SECTION ================= */
+.section {
+  padding: 70px 20px;
+  text-align: center;
+  background: #f8fafc;
+}
+
+.section h2 {
+  margin-bottom: 30px;
+}
+
+/* ================= CARDS ================= */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 220px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 12px;
+  font-weight: 600;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* ================= FEATURES ================= */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+  font-weight: 600;
+  color: #1e3a8a;
+  flex-wrap: wrap;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 34px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
