@@ -89,6 +89,12 @@
   transform: scale(1.05);
 }
 
+.empty {
+  text-align: center;
+  margin-top: 40px;
+  color: #555;
+}
+
 @media (max-width: 768px) {
   .section {
     width: 90%;

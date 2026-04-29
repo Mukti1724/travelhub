@@ -1,12 +1,52 @@
+
+/* ================= GLOBAL ================= */
+
+.split-container {
+  min-height: 80vh;
+  padding: 40px 20px;
+  background: #f5f9ff;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ================= HEADINGS ================= */
+
+.split-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1e3a8a;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
 /* ================= DASHBOARD ================= */
+
+.create-btn {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.create-btn:hover {
+  background: #1e40af;
+}
 
 .trip-header {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-  padding: 10px 15px;
+  padding: 12px 15px;
   background: #e6f0ff;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 20px;
 }
 
@@ -17,8 +57,8 @@
   padding: 12px 15px;
   margin-top: 10px;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
 }
 
 .trip-name {
@@ -48,7 +88,6 @@
   background: #1e40af;
 }
 
-/* DELETE BUTTON */
 .delete-btn {
   background: #ef4444 !important;
 }
@@ -57,34 +96,24 @@
   background: #dc2626 !important;
 }
 
-.split-container {
-  min-height: 80vh;
-  padding: 40px 20px;
-}
-
 /* ================= CREATE TRIP ================= */
 
 .create-card {
   max-width: 400px;
-  margin: 80px auto;
+  margin: 60px auto;
   background: white;
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 14px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.create-card h2 {
-  margin-bottom: 20px;
-  color: #1e3a8a;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .create-card input {
   width: 100%;
   padding: 12px;
+  margin-bottom: 15px;
   border-radius: 8px;
   border: 1px solid #ddd;
-  margin-bottom: 15px;
 }
 
 .create-card input:focus {
@@ -95,43 +124,38 @@
 .create-card button {
   width: 100%;
   padding: 12px;
-  border: none;
   background: #2563eb;
   color: white;
+  border: none;
   border-radius: 8px;
-  cursor: pointer;
 }
 
 .create-card button:hover {
   background: #1e40af;
 }
 
-/* ================= MAIN SPLIT PAGE ================= */
-
-.title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #1e3a8a;
-}
+/* ================= SPLIT EXPENSE ================= */
 
 .split-card {
-  max-width: 500px;
+  max-width: 550px;
   margin: 20px auto;
   background: white;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .split-card h3 {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
+
+/* INPUTS */
 
 .split-card input,
 .split-card select {
-  width: 100%;
+  width: 50%;
   padding: 12px;
-  margin: 10px 0;
+  margin: 10px;
   border-radius: 8px;
   border: 1px solid #ddd;
 }
@@ -142,49 +166,148 @@
   outline: none;
 }
 
+/* BUTTON */
+
 .split-card button {
-  width: 100%;
+  width: 15%;
   padding: 12px;
-  border: none;
-  background: #2563eb;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
   color: white;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
 }
 
 .split-card button:hover {
-  background: #1e40af;
+  transform: translateY(-2px);
 }
 
-/* TOTAL */
-.total {
-  text-align: center;
-  margin-top: 20px;
+/* PEOPLE LIST */
+
+.split-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
 }
 
-/* CALCULATE BUTTON */
+.split-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+/* CHECKBOX */
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.checkbox-group label {
+  background: #e0ecff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkbox-group label:hover {
+  background: #c7dbff;
+}
+
+/* EXPENSE */
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+/* DELETE */
+
+.delete-small {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+/* CALCULATE */
+
 .calc-btn {
   display: block;
-  margin: 20px auto;
-  padding: 12px 20px;
-  background: #2563eb;
+  margin: 30px auto;
+  padding: 12px 25px;
+  background: #16a34a;
   color: white;
-  border-radius: 8px;
+  border: none;
+  border-radius: 10px;
+}
+
+.calc-btn:hover {
+  transform: scale(1.05);
 }
 
 /* RESULT */
+
 .result {
-  max-width: 500px;
+  max-width: 550px;
   margin: 20px auto;
+}
+
+.settlement {
+  background: #e6f0ff;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
   text-align: center;
 }
 
-.positive {
-  color: green;
-  font-weight: 600;
+/* PERSON ROW (like input box) */
+.person-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  padding: 10px 12px;
+  margin-top: 8px;
+
+  background: #fff;
+  transition: 0.2s;
 }
 
-.negative {
-  color: red;
-  font-weight: 600;
+/* Hover effect */
+.person-row:hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.08);
+}
+
+/* Name text */
+.person-row span {
+  font-size: 14px;
+}
+
+/* Delete button (clean) */
+.delete-small {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete-small:hover {
+  transform: scale(1.2);
 }

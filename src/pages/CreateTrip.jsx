@@ -6,22 +6,44 @@ function CreateTrip() {
   const [tripName, setTripName] = useState("");
   const navigate = useNavigate();
 
-  const handleCreate = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // VERY IMPORTANT
+
+    console.log("Form submitted");
+
     if (!tripName) {
       alert("Enter trip name");
       return;
     }
 
-    const trips = JSON.parse(localStorage.getItem("trips")) || [];
+    const userId = localStorage.getItem("user");
+    console.log("User:", userId);
 
-    trips.push({
-      name: tripName,
-      expenses: [],
-    });
+    try {
+      const res = await fetch("http://127.0.0.1:5000/trip", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    userId,
+    name: tripName,
+  }),
+});
 
-    localStorage.setItem("trips", JSON.stringify(trips));
+console.log("STATUS:", res.status);
 
-    navigate("/split");
+      const data = await res.json();
+
+      console.log("Response:", data);
+
+      alert(data.message);
+      navigate("/split");
+
+    } catch (err) {
+      console.log("ERROR:", err);
+      alert("Something went wrong");
+    }
   };
 
   return (
@@ -29,14 +51,18 @@ function CreateTrip() {
       <div className="create-card">
         <h2>Create New Trip</h2>
 
-        <input
-          type="text"
-          placeholder="Enter Trip Name"
-          value={tripName}
-          onChange={(e) => setTripName(e.target.value)}
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="tripName"
+            id="tripName"
+            placeholder="Enter Trip Name"
+            value={tripName}
+            onChange={(e) => setTripName(e.target.value)}
+          />
 
-        <button onClick={handleCreate}>Create</button>
+          <button type="submit">Create</button>
+        </form>
       </div>
     </div>
   );
